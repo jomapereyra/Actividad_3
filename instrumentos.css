@@ -1,0 +1,109 @@
+/* Tipografia */
+
+html {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Alineacion bloques */
+
+.middle_block{
+    align-items: center;
+    justify-content: center;
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 20px;
+    background-color:#eaedff;
+    border-radius: 25px;
+}
+
+/* Encabezados */
+
+h3 {
+    border-bottom: 2px solid;
+    display: inline-block;
+    font-size: 21px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Tabla */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align:center;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgb(30, 115, 155);
+    color: white;
+}
+
+/* Formulario */
+
+input, select, textarea {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form_button{
+    display: inline-block;
+    margin-left: 20px;
+    background-color: lightblue;
+    border-radius: 5px;
+    height: 45px;
+    width: 80px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.form_button_block{
+    margin-top: 30px;
+    text-align: right;
+}
+
+.error{
+    color:red;
+    font-style: italic;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.error_formulario{
+    background-color: rgb(214, 102, 112);
+    border-radius: 5px;
+    color:white;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+
+/* Articulos */
+
+article{
+    margin-bottom: 20px;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="instrumentos.css">
+    <title>Instrumentos</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>INSTRUMENTOS</h1>
+    </header>
+
+    <section class="middle_block">
+
+        <!--Lista de Instrumentos-->
+
+        <article>
+
+            <h3>Lista de Instrumentos</h3>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Observaciones</th>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
+
+        </article>
+
+        <!--Alta de Instrumentos-->
+
+        <article>
+
+            <h3>Alta de Instrumentos</h3>
+
+            <form action="" method="post">
+
+                <!--Campo id-->
+                <label for="id_instrumento">ID</label>
+                <input id="id_instrumento" name="id_instrumento" type="text">
+
+                <span hidden class="error" id="error_id"></span>
+
+                <!--Campo tipo-->
+                <label for="tipo_instrumento">Tipo</label>
+                <select name="tipo_instrumento" id="tipo_instrumento">
+                    <option value="1">Piano</option>
+                    <option value="2">Violín</option>
+                    <option value="3">Violonchelo</option>
+                    <option value="4">Flauta</option>
+                    <option value="5">Trombón</option>
+                    <option value="6">Oboe</option>
+                </select>
+
+                <span hidden class="error" id="error_tipo"></span>
+
+                <!--Campo observaciones-->
+                <label for="observaciones_instrumento">Observaciones</label>
+                <textarea name="observaciones_instrumento" id="observaciones_instrumento" cols="80" rows="6"
+                    maxlength="250"></textarea>
+                <span id="contador">Caracteres restantes: 250</span>
+                <span hidden class="error" id="error_observaciones"></span>
+
+                <div hidden class="error_formulario" id="mensaje_error">
+                </div>
+
+                <!--Botones formulario-->
+                <div class="form_button_block">
+
+                    <!--Boton de enviar-->
+                    <input class="form_button" type="submit" value="Guardar">
+
+                    <!--Boton de cancelar-->
+                    <input class="form_button" type="reset" value="Cancelar">
+
+                </div>
+
+            </form>
+
+        </article>
+
+    </section>
+
+    <script src="instrumentos.js"></script>
+
+
+</body>
+
+</html>
