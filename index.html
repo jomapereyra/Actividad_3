@@ -24,16 +24,18 @@
             <h3>Lista de Instrumentos</h3>
 
             <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Observaciones</th>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
+                <tbody id="tabla_instrumentos">
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Observaciones</th>
+                    </tr>
+                    <tr id="ejemplo">
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
             </table>
 
         </article>
@@ -48,19 +50,19 @@
 
                 <!--Campo id-->
                 <label for="id_instrumento">ID</label>
-                <input id="id_instrumento" name="id_instrumento" type="text">
+                <input id="id_instrumento" name="id_instrumento" type="text" maxlength="3">
 
                 <span hidden class="error" id="error_id"></span>
 
                 <!--Campo tipo-->
                 <label for="tipo_instrumento">Tipo</label>
                 <select name="tipo_instrumento" id="tipo_instrumento">
-                    <option value="1">Piano</option>
-                    <option value="2">Violín</option>
-                    <option value="3">Violonchelo</option>
-                    <option value="4">Flauta</option>
-                    <option value="5">Trombón</option>
-                    <option value="6">Oboe</option>
+                    <option value="Piano">Piano</option>
+                    <option value="Violín">Violín</option>
+                    <option value="Violonchelo">Violonchelo</option>
+                    <option value="Flauta">Flauta</option>
+                    <option value="Trombón">Trombón</option>
+                    <option value="Oboe">Oboe</option>
                 </select>
 
                 <span hidden class="error" id="error_tipo"></span>

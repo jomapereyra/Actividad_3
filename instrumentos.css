@@ -9,20 +9,36 @@ html {
 /* Alineacion bloques */
 
 .middle_block{
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: 250px;
-    margin-right: 250px;
     padding: 20px;
     background-color:#eaedff;
     border-radius: 25px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+@media (max-width: 1200px) {
+    .middle_block{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .middle_block{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
 
 /* Encabezados */
 
 h3 {
     border-bottom: 2px solid;
-    display: inline-block;
+    display: inline-flex;
     font-size: 21px;
 }
 
@@ -54,7 +70,8 @@ th {
 /* Formulario */
 
 input, select, textarea {
-    display: inline-block;
+    display: inline-flex;
+    /*display: inline-block;*/
     margin-bottom: 20px;
 }
 
