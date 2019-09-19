@@ -22,12 +22,13 @@ function validar_id() {
             mostrar_error(mensaje_id, "El dato ingresado no es un número");
         }
         else {
-            var lista=new Array();
+            //Recorro la tabla para ver que no se repita mi ID
+            var lista = new Array();
             var tabla = document.getElementById("tabla_instrumentos");
             for (let index = 0; index < tabla.rows.length; index++) {
-                lista[index]=tabla.rows[index].cells[0].innerHTML;
+                lista[index] = tabla.rows[index].cells[0].innerHTML;
             }
-            if (lista.includes(id.value)){
+            if (lista.includes(id.value)) {
                 mostrar_error(mensaje_id, "Este id ya existe");
             }
             else {
@@ -105,7 +106,7 @@ function validar_formulario() {
 
         ocultar_error(mensaje_formulario);
         var tabla = document.getElementById("tabla_instrumentos");
-        var elementos=new Array();
+        var elementos = new Array();
         elementos[0] = document.getElementById("id_instrumento").value;
         elementos[1] = document.getElementById("tipo_instrumento").value;
         elementos[2] = document.getElementById("observaciones_instrumento").value;
@@ -116,6 +117,7 @@ function validar_formulario() {
             tabla.removeChild(ejemplo);
         }
 
+        //Crea la nueva fila
         var fila = document.createElement("tr");
 
         var celda;
@@ -123,12 +125,24 @@ function validar_formulario() {
         var contenido_celda;
 
         for (let index = 0; index < 3; index++) {
-            celda=document.createElement("td");
-            contenido_celda=document.createTextNode(elementos[index]);
-            celda.appendChild(contenido_celda); 
+            celda = document.createElement("td");
+            contenido_celda = document.createTextNode(elementos[index]);
+            celda.appendChild(contenido_celda);
             fila.appendChild(celda);
         }
 
+        //Creo mi boton de opcion
+        celda = document.createElement("td");
+        var boton = document.createElement('button');
+        boton.type = "button";
+        boton.name = "delete_button";
+        boton.onclick = eliminar_fila;
+        boton.innerText = "Opcion";
+
+        celda.appendChild(boton);
+        fila.appendChild(celda);
+
+        //Agrega la fila a la tabla
         tabla.appendChild(fila);
 
         limpiar();
@@ -137,21 +151,27 @@ function validar_formulario() {
     else {
         mostrar_error(mensaje_formulario, "<p>Existen algunos errores que deben corregirse</p>");
     }
+
+    return false;
+}
+
+function eliminar_fila() {
+    console.log(this);
+    var fila = this.parentNode.parentNode.rowIndex;
+    console.log(fila);
+    document.getElementById("tabla_instrumentos").deleteRow(fila);
 }
 
 //Eventos
 
 var id_input = document.getElementById("id_instrumento");
-id_input.addEventListener("keyup", validar_id, true);
+id_input.addEventListener("input", validar_id, true);
 
 var tipo_select = document.getElementById("tipo_instrumento");
 tipo_select.addEventListener("change", validar_tipo, true);
 
 var obs_area = document.getElementById("observaciones_instrumento");
 obs_area.addEventListener("keyup", validar_observaciones, true);
-
-var send = document.getElementById("submit_button");
-send.addEventListener("click", validar_formulario, true);
 
 var cancel = document.getElementById("cancel_button");
 cancel.addEventListener("click", limpiar, true);

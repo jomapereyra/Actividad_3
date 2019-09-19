@@ -29,8 +29,10 @@
                         <th>ID</th>
                         <th>Tipo</th>
                         <th>Observaciones</th>
+                        <th>Acción</th>
                     </tr>
                     <tr id="ejemplo">
+                        <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
@@ -46,7 +48,7 @@
 
             <h3>Alta de Instrumentos</h3>
 
-            <form id="formulario_instrumento">
+            <form id="formulario_instrumento" onsubmit="return validar_formulario();">
 
                 <!--Campo id-->
                 <label for="id_instrumento">ID</label>
@@ -81,7 +83,7 @@
                 <div class="form_button_block">
 
                     <!--Boton de enviar-->
-                    <input id="submit_button" class="form_button" type="button" value="Guardar">
+                    <input id="submit_button" class="form_button" type="submit" value="Guardar">
 
                     <!--Boton de cancelar-->
                     <input id="cancel_button" class="form_button" type="button" value="Cancelar">
