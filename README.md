@@ -4,4 +4,4 @@ Esta es una descripcion breve del proyecto
 
 ## Objetivo
 
-Practicar las pr 😃. Estoy probando otra cosa 🤓
+Practica de PR 🔥. Estoy probando otra cosa 😝
